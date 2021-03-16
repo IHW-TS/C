@@ -8,10 +8,11 @@
 
 unsigned int lengthString(char *s)
 {
+    int i;
 
     char s[] = "Programming is fun";
 
-    for (int i = 0; s[i] != '\0'; ++i);
+    for ( i = 0; s[i] != '\0'; ++i);
     
     printf("Length of the string: %d", i);
     return 0;
