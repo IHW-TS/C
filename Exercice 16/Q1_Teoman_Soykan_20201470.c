@@ -18,7 +18,3 @@ int main () {
     return 0;
     
 }
-/*
-Ici, la boucle while qui va compter le nombre de caratere. != signifie qu'il doit etre different de \0. "chr++" va compter le nombre de caractere.
-À la fin de la boucle, on va renvoyer le nombre de charactere.
-*/
