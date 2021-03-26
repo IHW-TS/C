@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int mirror(char *str1)
+void mirror(char *str1; char* str2)
 {
-    char str2 [100];
+    
   int a, b, j;
   for (a = 0; str1[a] != '\0'; a++);
   j = a - 1;
+  
+  str2 = (char *) malloc((j+1)*sizeof(char));
   
   for (b = 0; b <= a; b++)
   {
@@ -21,10 +23,10 @@ int mirror(char *str1)
 
 int main()
 {
-    char s [100];
+    char* s;
     printf("Ecriver un mot : ");
     gets(s); 
     printf("Le miroir du mot est : ");
-    mirror(s);
+    s = mirror(str1, str2);
     return 0;
 }
