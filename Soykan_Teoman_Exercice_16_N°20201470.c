@@ -30,7 +30,8 @@ int mirror(char *strA, char *strB)
   char str1[100], str2[100];
   int a, b, j;
   scanf("%s", &str1);
-  for (a = 0; str1[a] != '\0'; a++);
+  for (a = 0; str1[a] != '\0'; a++)
+    ;
   j = a - 1;
   for (b = 0; b <= a; b++)
   {
@@ -89,40 +90,40 @@ int main()
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
- 
-int stringcompare(char *s1,char *s2)
+
+int stringcompare(char *s1, char *s2)
 {
-char str1[100], str2[100];
+  char str1[100], str2[100];
   int a, b, j;
-	if(strlen(str1)==strlen(str2))
+  if (strlen(str1) == strlen(str2))
+  {
+    for (a = 0; str1[a] != '\0'; a++)
+      ;
+    j = a - 1;
+    for (b = 0; b <= a; b++)
     {
-        for (a = 0; str1[a] != '\0'; a++);
-          j = a - 1;
-        for (b = 0; b <= a; b++)
-        {
-             str2[b] = str1[j];
-             j--;
-        }
-            for (b = 0; b < a; b++)
-          printf("%c", str2[b]);
-     return 0;
+      str2[b] = str1[j];
+      j--;
     }
+    for (b = 0; b < a; b++)
+      printf("%c", str2[b]);
+    return 0;
+  }
 }
 int main()
 {
- 
-    char s1[1000],s2[1000],c;  
- 
-    printf("Enter  string1: ");
-    gets(s1);
-    printf("Enter  string2: ");
-    gets(s2);
-    c=stringcompare(s1,s2);
-    if(c)
-        printf("strings are equal");
-    else
-        printf("strings are not equal");
-    
-	return 0;
-    
+
+  char s1[1000], s2[1000], c;
+
+  printf("Enter  string1: ");
+  gets(s1);
+  printf("Enter  string2: ");
+  gets(s2);
+  c = stringcompare(s1, s2);
+  if (c)
+    printf("strings are equal");
+  else
+    printf("strings are not equal");
+
+  return 0;
 }
