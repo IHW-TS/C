@@ -4,25 +4,25 @@
 int palindrome(char *txt) 
 {
    
-  int a, mn, z, longeur = 0;
+  int d, m, f, longeur = 0;
 
 
   while (txt[longeur] != '\0') // on pourrait aussi faire appelle a la fonction getLenString(s)
     longeur++;
 
-  z = longeur - 1;
-  mn = longeur/2;
+  f = longeur - 1;
+  m = longeur/2;
 
-  for (a = 0; a < mn; a++)
+  for (d = 0; d < m; d++)
   {
-    if (txt[a] != txt[z])
+    if (txt[d] != txt[f])
     {
       printf("n'est pas palindrome.\n");
       break;
     }
-    z--;
+    f--;
   }
-  if (a == mn)
+  if (d == m)
     printf("Est palindrome.\n");
 
   return 0;
@@ -30,9 +30,9 @@ int palindrome(char *txt)
 
 int main() {
     
-  char a[100];
-  gets(a); // permet d'ecrire des caracteres
-  palindrome(a);
+  char d[100];
+  gets(d); // permet d'ecrire des caracteres
+  palindrome(d);
 
     return 0;
 }

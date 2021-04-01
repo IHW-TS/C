@@ -23,7 +23,7 @@ int  mirror(char *str1)
 }
 
 int main()
-{
+{ 
     char* s = NULL;
     printf("Ecriver un mot : ");
     gets(s); 
@@ -33,8 +33,7 @@ int main()
     return 0;
 }
 
-efqgezhjgeoirjhoezrjhtrztjhnptr^nj,prktzgnjprzjohnjrtzohg
-
+/*
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -89,3 +88,5 @@ char * reverseWithoutDynamicMemory(char *pWord, int length, char *reverseWord) {
     reverseWord[length] = '\0';
     return reverseWord;
 }
+
+*/
