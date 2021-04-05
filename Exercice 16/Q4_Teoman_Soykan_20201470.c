@@ -4,7 +4,7 @@
 
 int longueur(char* chaine){
     
-    int nbcaracteres= 0;
+    int nbcaracteres = 0;
     
     while (chaine[nbcaracteres] != '\0'){
     nbcaracteres++;
