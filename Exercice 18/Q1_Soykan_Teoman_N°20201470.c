@@ -26,7 +26,7 @@ int main()
     printf("Le resultat de l'addition des deux nombres binaires est : ");
 
     while (i >= 0)
-        printf("%d", add[i++]);
+        printf("%d", add[i--]);
 
     return 0;
 }
