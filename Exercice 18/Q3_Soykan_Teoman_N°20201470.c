@@ -1,27 +1,26 @@
+#include <stdio.h>  
+#include <stdlib.h> 
 #include <math.h>
-#include <stdio.h>
 
-
-long long convert(int n) {
-
-    long long b = 0;
-    int reste, i = 1, etape = 1;
-
-    while (n != 0) {
-        reste = n % 2;
-        printf("Etape 1 %d: %d/2, Reste = %d, Quotient = %d\n", etape++, n, reste, n / 2);
-        n /= 2;
-        b += reste * i;
-        i *= 10;
-    }
+unsigned int binaire_entier(unsigned int number) {
     
-    return b;
+    unsigned int decimal = 0, i = 0;
+    unsigned reste;
+    
+    while (number != 0) {
+        reste = number % 10;
+        number /= 10;
+        decimal += reste * pow(2, i);
+        i ++;
+    }
+    return decimal;
 }
 
 int main() {
-    int n;
-    printf("Entre un nombre entier : ");
+    
+    unsigned int n;
+    printf("Entrer un nombre binaire : ");
     scanf("%d", &n);
-    printf("%d En nombre entier  = %lld en binaire", n, convert(n));
+    printf("%d en decimal", binaire_entier(n));
     return 0;
 }
