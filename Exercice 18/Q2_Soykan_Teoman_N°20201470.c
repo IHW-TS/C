@@ -26,8 +26,6 @@ char *add(char *a, char *b)
         result = (char *)malloc((longeur(b) + 2) * sizeof(char));
         j = longeur(b);
     }
-
-    
     for (int i = 0; i < j; i++)
     {
         if (a[i] == '1' && b[i] == '1')

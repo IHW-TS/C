@@ -1,92 +1,122 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int  mirror(char *str1)
+unsigned int longeur(char *c)
 {
+    unsigned int longeur = 0;
+    while (c[longeur] != '\0')
+    {
+        longeur++;
+    }
+    return longeur;
+}
+
+char *add(char *a, char *b)
+{
+    unsigned int r = 0;
+    char *result;
+    unsigned int j, i;
+    if (longeur(a) >= longeur(b))
+    { 
+        result = (char *)malloc((longeur(a) + 2) * sizeof(char));
+        j = longeur(a);
+           
+    for(i=0; i<j; i++)
+    {
+       a[i];
+    }
+
+    }
+    else
+    {
+        result = (char *)malloc((longeur(b) + 2) * sizeof(char));
+        j = longeur(b);
+           
+    for(i=0; i<j; i++)
+    {
+       b[i];
+    }
+
+    }
     
-  char* str2;
-  int a, b, j;
-  for (a = 0; str1[a] != '\0'; a++);
-  j = a - 1;
-  
-  str2 = (char *) malloc((j+1)*sizeof(char));
-  
-  for (b = 0; b <= a; b++)
-  {
-    str2[b] = str1[j];
-    j--;
-  }
-  
-  for (b = 0; b < a; b++)
-    printf("%c", str2[b]);
-  return 0;
+    
+    for (i = j-1; i>=0; i--)
+    {
+        if (a[i] == '1' && b[i] == '1'){
+
+            if (r == 1){
+                result[i] = '1';
+                r = 1;
+
+            }else{
+                result[i] = '0';
+                r = 1;
+            }
+        }
+        else if (a[i] == '1' && b[i] == '0')
+        {
+
+            if (r == 1)
+            {
+                result[i] = '0';
+                r = 1;
+            }
+            else
+            {
+                result[i] = '1';
+                r = 0;
+            }
+        }
+        else if (a[i] == '0' && b[i] == '1')
+        {
+
+            if (r == 1)
+            {
+                result[i] = '0';
+                r = 1;
+            }
+            else
+            {
+                result[i] = '1';
+                r = 0;
+            }
+        }
+        else if (a[i] == '0' && b[i] == '0')
+        {
+
+            if (r == 1)
+            {
+                result[i] = '1';
+                r = 0;
+            }
+            else
+            {
+                result[i] = '0';
+                r = 0;
+            }
+        }
+        
+    if (r == 1)
+    {
+        result[i + 1] = '1';
+    }
+    else
+    {
+        result[i + 1] = '0';
+    }
+     result[i + 2] = '\0';
+    }
+    
+return result;
 }
 
 int main()
-{ 
-    char* s = NULL;
-    printf("Ecriver un mot : ");
-    gets(s); 
-    printf("Le miroir du mot est : ");
-    s = (char *) malloc(sizeof(char));
-    mirror(s);
-    return 0;
+{
+    char *a;
+    char *b;
+    printf("Entrer une premiere chaine de caractere :");
+    scanf("%ms", &a);
+    printf("Entrer une deuxieme chaine de caractere :");
+    scanf("%ms", &b);
+    printf("%s", add(a, b));
 }
-
-/*
-#include <stdio.h>
-#include <stdlib.h>
-
-int length(char *);
-char * reverseWithDynamicMemory(char *, int);
-char * reverseWithoutDynamicMemory(char *, int, char *);
-
-int main() {
-    char *pWord = "Computer";
-    int wordLength = length(pWord);
-    char reverseWordWithouDynamicMemory[wordLength];
-    
-    printf("Word Lenght: %d\n", wordLength);
-    printf("\nReverse with Dynamic Memory: %s\n", reverseWithDynamicMemory(pWord, wordLength));
-    printf("Reverse without Dynamic Memory: %s\n\n", reverseWithoutDynamicMemory(pWord, wordLength, reverseWordWithouDynamicMemory));
-    
-    return 0;
-}
-
-int length(char *pWord) {
-    int i;
-    for (i = 0; *(pWord + i) != '\0'; i++);
-    return i;
-}
-
-char * reverseWithDynamicMemory(char *pWord, int length) {
-    int i = 0, end = length - 1;
-    char *reverseWord = (char *) malloc(sizeof(char) * length);
-    if(!reverseWord) {
-        printf("\nError allocating memory for reverseWord...\n");
-        exit(EXIT_FAILURE);
-    }
-
-    while (i < end || end >= 0) {
-        reverseWord[i] = pWord[end];
-        end--;
-        i++;
-    }
-
-    reverseWord[length] = '\0';
-    return reverseWord;
-}
-char * reverseWithoutDynamicMemory(char *pWord, int length, char *reverseWord) {
-    int i = 0, end = length - 1;
-
-    while (i < end || end >= 0) {
-        reverseWord[i] = pWord[end];
-        end--;
-        i++;
-    }
-
-    reverseWord[length] = '\0';
-    return reverseWord;
-}
-
-*/
