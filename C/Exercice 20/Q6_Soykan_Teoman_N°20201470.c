@@ -15,7 +15,7 @@ Tab remove_duplicate(Tab s)
     {
         for (j = i + 1; j < s.len; j++)
         {
-            // quand un élément dupliqué est trouver
+            // quand un élément dupliqué est trouvé
             if (s.val[i] == s.val[j])
             {
                 //On va suprrimer l'élément dupliqué

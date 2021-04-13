@@ -9,14 +9,14 @@ typedef struct
 
 int second_minimum(Tab s)
 {
-    int i, j;
+    int i, j, temp;
     for (i = 0; i < s.len - 1; i++)
     {
         for (j = 0; j < s.len - i - 1; j++)
         {
             if (s.val[j] > s.val[j + 1])
             {
-                int temp = s.val[j];
+                temp = s.val[j];
                 s.val[j] = s.val[j + 1];
                 s.val[j + 1] = temp;
             }
@@ -81,7 +81,8 @@ int second_minimum(Tab s)
         {
             s_small = s.val[i];
         }
-    }
+    }s
+    return s.val[s_small];
 }
 
 int main()
@@ -104,4 +105,5 @@ int main()
     printf("\nLa seconde valeur la plus petite est %d \n", s.val[1]);
     return 0;
 }
+
 */
