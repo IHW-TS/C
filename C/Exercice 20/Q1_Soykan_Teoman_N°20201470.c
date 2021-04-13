@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct { 
     unsigned int len; 
@@ -11,7 +12,7 @@ void reverse(Tab s)
     printf("Affichage du tableau renverse :\n");
     for (i = s.len - 1; i >= 0; i--)
     {
-        printf("%d\n", s.val[i]);
+        printf("%d\n", s.val + i);
     }
 }
 
