@@ -9,8 +9,7 @@ typedef struct{
 
 void inverse (Tab s){
     
-	int longeur = s.len - 1;
-	int inverse; 
+	int longeur = s.len - 1, inverse, i;
 	
 	for ( int i=0; i<longeur; i++){
 		int inverse = s.val[i];
