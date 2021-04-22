@@ -2,29 +2,25 @@
 #include <stdlib.h>
 #include <math.h>
 
-unsigned int binaire_entier(unsigned int number)
-{
 
-    unsigned int decimal = 0, i = 0;
-    unsigned reste;
+int convert(int n) {
 
-    while (number != 0)
-    {
-        reste = number % 10;
-        number /= 10;
-        decimal += reste * pow(2, i);
-        i++;
+    int binaire = 0, rem, i = 1;
+    
+    while (n != 0) {
+
+        rem = n % 2;
+        n /= 2;
+        binaire  += rem * i;
+        i *= 10;
     }
-    return decimal;
+    return binaire;
 }
 
-int main()
-{
-
-    unsigned int n;
-    printf("Entrer un nombre binaire : ");
+int main() {
+    int n;
+    printf("Entrer un nombre entier : ");
     scanf("%d", &n);
-    printf("%d en decimal", binaire_entier(n));
+    printf("le nombre binaire est : %d", convert(n));
     return 0;
 }
-
